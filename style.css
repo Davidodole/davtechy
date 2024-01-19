@@ -23,37 +23,6 @@ p{
 }
 /* -----------------------PRELOADER-------------------------- */
 
-.preload{
-    width: 100vw;
-    height: 100%;
-    background-color: #3a4d39;
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-.preload span{
-    font-size: 1.5em;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: capitalize;
-}
-.load{
-    height: 50px;
-    border-radius: 50%;
-    width: 50px;
-    border: 4px solid #0ef;
-    border-bottom-color: #3a4d39;
-    animation: spin 1s infinite linear forwards;
-}
-@keyframes spin {
-    100%{
-        transform: rotate(360deg);
-    }
-}
 /* ----------------------------NAVIGATION BAR------------------------- */
 nav{
     position: relative;
@@ -272,7 +241,10 @@ nav ul a:hover{
     color: #3a4d39;
 }
 .skill_text{
-    max-width: 700px;
+    max-width: 500px;
+}
+.skill .skill_progress{
+    width: 100%;
 }
 .skill .progress{
     display: grid;
@@ -482,14 +454,15 @@ footer p{
         display: flex;
         flex-direction: column;
         position: fixed;
-        width: 300px;
+        width: 90%;
         right: 0;
         left: 0;
         margin: auto;
         gap: 20px;
         top: 4.6em;
         height: 0;
-        background-color: #eafbfb;
+        background: linear-gradient(rgba(19, 72, 107, 0.6), rgba(3, 10, 2, 0.901));
+        backdrop-filter: blur(5px);
         overflow: hidden;
         transition: 1.05s;
         border-radius: 0 0 15px 15px;
@@ -498,10 +471,11 @@ footer p{
     nav .open{
         transition: height 1s;
         transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
-        height: 280px;
+        height: 250px;
     }
     nav ul a{
         background-color: transparent;
+        color: #eafbfb;
     }
     nav ul a:hover{
         padding: 5px 10px;
@@ -538,39 +512,53 @@ footer p{
     }
 
 }
-
 @media  screen and (max-width: 880px) {
-    
-        /* =======================PORTFOLIO PAGE==================== */
-
-        .portfolio .content{
-            display: grid;
-            grid-gap: 12px;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            grid-template-rows: 1fr;
-        }
-        .portfolio img{
-            width: 220px;
-            height: 220px;
-            transition: 1s;
-        }
-}
-
-@media  screen and (max-width: 799px) {
     
     /* =======================PORTFOLIO PAGE==================== */
 
     .portfolio .content{
         display: grid;
-        grid-gap: 7px;
-        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        grid-gap: 12px;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
         grid-template-rows: 1fr;
     }
     .portfolio img{
-        width: 160px;
-        height: 160px;
+        width: 220px;
+        height: 220px;
         transition: 1s;
     }
+}
+
+@media  screen and (max-width: 799px) {
+/* =================================HOME========================= */
+
+.home_text{
+    max-width: 400px;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+}
+
+/* =======================PORTFOLIO PAGE==================== */
+
+.portfolio .content{
+    display: grid;
+    grid-gap: 7px;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    grid-template-rows: 1fr;
+}
+.portfolio img{
+    width: 160px;
+    height: 160px;
+    transition: 1s;
+}
+
+/* ======================SKILL=================================== */
+.skill_text{
+    max-width: 400px;
+}
 }
 
 
@@ -579,66 +567,94 @@ footer p{
 
 
 @media screen and (max-width: 700px) {
-    /* --------------------------ABOUT---------------------- */
-    .about_content{
-        display: flex;
-        flex-direction: column-reverse;
-        padding: 40px 5%;
-    }
-    
-    /* -----------------------FORM----------------------- */
+/* --------------------------ABOUT---------------------- */
+.about_content{
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 40px 5%;
+}
 
-    .form form h3{
-        text-align: center;
-        text-transform: capitalize;
-        line-height: 3;
-        font-size: 17px;
-    }
-    /* -------------------------------------HOME---------------------------------- */
-    .home{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 50px 10%;
-        gap: 30px;
-    }
-    /* ------------------SKILL--------------------------- */
-    .skill{
-        padding: 50px 10%;
-        background-color: #eafbfb;
-        display: block;
-        justify-content: center;
-        align-items: center;
-    }
+/* -----------------------FORM----------------------- */
 
-    /* ========================PORTFOLIO PAGE========================= */
+.form form h3{
+    text-align: center;
+    text-transform: capitalize;
+    line-height: 3;
+    font-size: 17px;
+}
+/* -------------------------------------HOME---------------------------------- */
+.home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 10%;
+    gap: 30px;
+}
+/* ------------------SKILL--------------------------- */
+.skill{
+    padding: 50px 10%;
+    background-color: #eafbfb;
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
 
-    .portfolio .content{
-        padding: 0 10px;
-        display: grid;
-        grid-gap: 5px;
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        grid-template-rows: 1fr;
-    }
-    .portfolio img{
-        width: 150px;
-        height: auto;
-        transition: 1s;
-    }
-    .portfolio{
-        padding: 50px 3%;
-    }
+/* ================================ABOUT PAGE================================ */
 
-    /* ================================ABOUT PAGE================================ */
+.wrap_about{
+    padding: 30px 5%;
+}
+.wrap_about .cover img{
+    width: 100%;
+}
+.wrap_content{
+    text-align: center;
+}
 
-    .wrap_about{
-        padding: 30px 5%;
-    }
-    .wrap_about .cover img{
-        width: 100%;
-    }
-    .wrap_content{
-        text-align: center;
-    }
+
+
+}@media screen and (min-width: 513px) and (max-width:884px) {
+.portfolio .content{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.portfolio img{
+    width: 100%;        
+    transition: 1s;
+}
+.portfolio{
+    padding: 70px 4%;
+}
+}
+
+
+
+@media screen and (min-width: 400px) and (max-width: 513px) and (orientation: portrait) {
+.portfolio .content{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.portfolio img{
+    width: 100%;
+    transition: 1s;
+}
+.portfolio{
+    padding: 70px 4%;
+}
+}
+
+@media screen and (max-width: 400px) and (orientation: portrait) {
+.portfolio .content{
+    display: flex;
+    flex-direction: column;
+}
+.portfolio img{
+    width: 100%;
+    height: auto;
+    transition: 1s;
+}
+.portfolio{
+    padding: 70px 4%;
+}
 }
