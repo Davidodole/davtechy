@@ -461,17 +461,17 @@ footer p{
         gap: 20px;
         top: 4.6em;
         height: 0;
-        background: linear-gradient(rgba(19, 72, 107, 0.6), rgba(3, 10, 2, 0.901));
-        backdrop-filter: blur(5px);
+        background: linear-gradient(180deg, #250821c0, rgba(0, 238, 255, 0.773));
+        backdrop-filter: blur(3px);
         overflow: hidden;
-        transition: 1.05s;
+        transition: 0.5s;
         border-radius: 0 0 15px 15px;
         box-shadow: inset 0 0 10em #250821;
     }
     nav .open{
-        transition: height 1s;
+        transition: height 0.5s;
         transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
-        height: 250px;
+        height: 200px;
     }
     nav ul a{
         background-color: transparent;
