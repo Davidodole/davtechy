@@ -78,6 +78,19 @@ nav ul a:hover{
     transition: 1.08s;
     border-radius: 5px;
 }
+/* =================================IMAGE=========================== */
+
+    @keyframes animate {
+        from{
+            opacity: 0;
+            transform: scale(0.1);
+        }
+        to{
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
 /* --------------------------------------HOME------------------------- */
 .home{
     display: grid;
@@ -501,6 +514,15 @@ footer p{
     .home p:nth-child(1){
         margin-top: revert-layer;
         padding-top: 20px;
+    }
+    .home_image > img{
+        view-timeline: --subjectReveal block;
+        animation-timeline: --subjectReveal;
+        transform-origin: bottom;
+        animation-name: animate;
+        animation-range: scroll(100px);
+        animation-fill-mode: both;
+        animation-duration: 1ms; /* Firefox requires this to apply the animation */
     }
     /* --------------------------ABOUT ME ---------------------- */
     .about_content{
